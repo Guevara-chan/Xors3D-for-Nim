@@ -4,7 +4,7 @@
 # Converted in 2019 by Guevara-chan.
 # *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
 import os, random, times, sequtils
-include "../../Xors3D.nim"
+include "../../Headers/Xors3D.nim"
 "../../".setCurrentDir
 
 # for particles
