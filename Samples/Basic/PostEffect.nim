@@ -4,7 +4,7 @@
 # Converted in 2019 by Guevara-chan.
 # *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
 import os
-include "../../xors3d.nim"
+include "../../Xors3D.nim"
 "../../".setCurrentDir
 
 var 
