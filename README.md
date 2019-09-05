@@ -2,7 +2,7 @@
 **Xors3D** is an abandoned 3D graphics engine, easily accessible from almost any programming language through transparent procedural interface. It was initially developed by XorsTeam in attempt of bringing DirectX9 functionality into Blitz3D. Discounted since 2012.
 
 **Xors3D for Nim** is one of aftermath wrappers, reconstructed directly from C++ headers to return Xors' legacy into present.  
-Just `include "xors3d.nim"` to hook it up - maximum transparency, Nim style.
+Just `include "Xors3D.nim"` or `import xors3d` to hook it up with stuff from `DLL` folder present in .exe workdir - maximum transparency, Nim style.
 
 ## •Featuræ•
 + *Some* of 69 original Xors3D samples, translated from [PureBasic wrapper](https://github.com/Guevara-chan/Xors3D-for-PB) to Nim.  
