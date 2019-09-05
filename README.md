@@ -3,6 +3,7 @@
 
 **Xors3D for Nim** is one of aftermath wrappers, reconstructed directly from C++ headers to return Xors' legacy into present.  
 Just `import xors3d` to hook it up with stuff from `DLL` folder present in .exe workdir - maximum transparency, Nim style.
+**Installation:** run `nimble install xors3d` in terminal.  
 
 ## •Featuræ•
 + *Some* of 69 original Xors3D samples, translated from [PureBasic wrapper](https://github.com/Guevara-chan/Xors3D-for-PB) to Nim.  
