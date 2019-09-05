@@ -1,4 +1,4 @@
-## •Sum•
+## •Sum• [![nimble](https://raw.githubusercontent.com/yglukhov/nimble-tag/master/nimble.png)](https://github.com/yglukhov/nimble-tag)
 **Xors3D** is an abandoned 3D graphics engine, easily accessible from almost any programming language through transparent procedural interface. It was initially developed by XorsTeam in attempt of bringing DirectX9 functionality into Blitz3D. Discounted since 2012.
 
 **Xors3D for Nim** is one of aftermath wrappers, reconstructed directly from C++ headers to return Xors' legacy into present.  
