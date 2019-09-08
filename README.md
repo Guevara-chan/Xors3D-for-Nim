@@ -6,10 +6,9 @@ Just `import xors3d` to hook it up with stuff from `DLL` folder present in .exe 
 **Installation:** run `nimble install xors3d` in terminal.  
 
 ## •Featuræ•
++ No package installation necessary - just download .zip and inlcude `include "Xors3D.nim"`.  
 + *Some* of 69 original Xors3D samples, translated from [PureBasic wrapper](https://github.com/Guevara-chan/Xors3D-for-PB) to Nim.  
 + Latest salvageable engine revision: *1.15.750.0*  
-+ Dynamical prototype-based bindings.  
-+ XCopy-based installation.  
 
 ## •Remark•
 **↯** *If you receive "SIGSEGV: Illegal storage access" error right at first call of any procedure from Xors3D.dll...*  
