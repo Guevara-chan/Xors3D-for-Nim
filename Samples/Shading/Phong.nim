@@ -105,9 +105,10 @@ while true:
     if KEY_1.xKeyHit.bool: tModel.xSetEffectTechnique "Directional"
     if KEY_2.xKeyHit.bool: tModel.xSetEffectTechnique "Point"
     if KEY_3.xKeyHit.bool: tModel.xSetEffectTechnique "PointDistance"
-    
-    tLightSpr.xPositionEntity (cpuTime() * 0.5).sin * 30, ((cpuTime() * 0.6).sin * 25).abs + 5, 
-        (cpuTime() * 0.4).sin * 30
+
+    let ms = cpuTime() * 1000    
+    tLightSpr.xPositionEntity (ms * 0.05).degToRad.sin * 30, ((ms * 0.06).degToRad.sin * 25).abs + 5, 
+        (ms * 0.04).degToRad.sin * 30
     #====================================
     
     if KEY_ESCAPE.xKeyHit.bool: quit()
