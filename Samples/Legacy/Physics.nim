@@ -1,7 +1,7 @@
 # *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
 # Xors3D legacy sample: 'Physics'
 # Original source from Xors3D Team (C)
-# Converted in 2012 by Guevara-chan.
+# Converted in 2019 by Guevara-chan.
 # *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
 import os, random
 include "../../Headers/Xors3D.nim"
