@@ -131,6 +131,7 @@ proc CreateParticle(x, y, z: float, texture: Handle) =
 
 # main program loop
 var mxs, mys: float
+var lastCreated = 0.0
 while 0 == KEY_ESCAPE.xKeyDown:
 
     # camera control
@@ -149,14 +150,13 @@ while 0 == KEY_ESCAPE.xKeyDown:
     camera.xRotateEntity camya, camxa, 0.0
     
     # update flame
-    var lastCreated = 0
-    if cpuTime().int * 1000 > lastCreated:
+    if cpuTime() > lastCreated:
         let
             px = fire.xEntityX(true) + (2.rand - 1).float / 10
             py = fire.xEntityY true
             pz = fire.xEntityZ(true) + (2.rand - 1).float / 10
         CreateParticle px, py, pz, flame
-        lastCreated = cpuTime().int * 1000 + 25
+        lastCreated = cpuTime() + 25 / 1000
     UpdateParticles()
     
     # move warrior
