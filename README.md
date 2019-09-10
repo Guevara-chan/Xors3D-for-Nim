@@ -6,7 +6,7 @@ Just `import xors3d` to hook it up with stuff from `DLL` folder present in .exe 
 **Installation:** run `nimble install xors3d` in terminal.  
 
 ## •Featuræ•
-+ Faithful procedural API translation to maximize compatibility with other imperative languages.
++ Faithful line-by-line header translation to maximize compatibility with other imperative languages.
 + *Some* of 69 original Xors3D samples, translated from [PureBasic wrapper](https://github.com/Guevara-chan/Xors3D-for-PB) to Nim.  
 + Latest salvageable engine revision: *1.15.750.0*  
 
