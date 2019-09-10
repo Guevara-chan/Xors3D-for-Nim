@@ -150,13 +150,13 @@ while 0 == KEY_ESCAPE.xKeyDown:
     
     # update flame
     var lastCreated = 0
-    if cpuTime().int > lastCreated:
+    if cpuTime().int * 1000 > lastCreated:
         let
             px = fire.xEntityX(true) + (2.rand - 1).float / 10
             py = fire.xEntityY true
             pz = fire.xEntityZ(true) + (2.rand - 1).float / 10
         CreateParticle px, py, pz, flame
-        lastCreated = cpuTime().int + 25
+        lastCreated = cpuTime().int * 1000 + 25
     UpdateParticles()
     
     # move warrior
