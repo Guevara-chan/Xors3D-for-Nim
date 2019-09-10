@@ -59,7 +59,7 @@ let tShader = "Media/Materials/Phong.fx".xLoadFXFile
 # Model
 let tModel = "Media/Extra media/Teapot.b3d".xLoadMesh
 
-let tTextureDiffuse = "Media/Extra media/rRockwall_Diffuse.jpg".xLoadTexture
+let tTextureDiffuse = "Media/Extra media/Rockwall_Diffuse.jpg".xLoadTexture
 
 tModel.xSetEntityEffect tShader
 tModel.xSetEffectTechnique "Directional"
@@ -106,8 +106,8 @@ while true:
     if KEY_2.xKeyHit.bool: tModel.xSetEffectTechnique "Point"
     if KEY_3.xKeyHit.bool: tModel.xSetEffectTechnique "PointDistance"
     
-    tLightSpr.xPositionEntity (cpuTime() * 0.05).sin * 30, ((cpuTime() * 0.06).sin * 25).abs + 5, 
-        (cpuTime() * 0.04).sin * 30
+    tLightSpr.xPositionEntity (cpuTime() * 0.5).sin * 30, ((cpuTime() * 0.6).sin * 25).abs + 5, 
+        (cpuTime() * 0.4).sin * 30
     #====================================
     
     if KEY_ESCAPE.xKeyHit.bool: quit()
