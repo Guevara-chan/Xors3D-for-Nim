@@ -34,7 +34,7 @@ let light1 = LIGHT_DIRECTIONAL.xCreateLight
 light1.xRotateEntity 45, 0, 0
 
 # creating the terrain
-let terr = "media/textues/terrain.png".xLoadTerrain
+let terr = "media/textures/terrain.png".xLoadTerrain
 terr.xScaleEntity 1, 200, 1
 let grass = "media/textures/IceTerrain.jpg".xLoadTexture
 terr.xEntityTexture grass, 0, 0
