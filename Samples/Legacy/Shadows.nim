@@ -3,7 +3,7 @@
 # Original source from Xors3D Team (C)
 # Converted in 2019 by Guevara-chan.
 # *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
-import os, random, times, sequtils
+import os, random, times, sequtils, lenientops
 include "../../Headers/Xors3D.nim"
 "../../".setCurrentDir
 
@@ -101,7 +101,7 @@ light2.xLightShadowEpsilons 0.01, 0.0
 
 # for camera mouse look
 proc CurveValue(newvalue: float, oldvalue: float, increments: int): float =
-    if increments >  1:     oldvalue - (oldvalue - newvalue) / increments.float
+    if increments >  1:     oldvalue - (oldvalue - newvalue) / increments
     elif increments <= 1:   newvalue
     else: oldvalue
 
@@ -124,8 +124,8 @@ proc CreateParticle(x, y, z: float, texture: Handle) =
     newParticle.entity.xEntityFX        1
     newParticle.entity.xEntityBlend     3
     newParticle.entity.xPositionEntity  x, y, z
-    newParticle.entity.xScaleSprite     5.rand.float32 + 2.0, 5.rand.float32 + 2.0
-    newParticle.speed = (3.rand + 2).float / 10.0
+    newParticle.entity.xScaleSprite     5.rand + 2.0, 5.rand + 2.0
+    newParticle.speed = (3.rand + 2) / 10.0
     newParticle.alpha = 1.0
     particles &= newParticle
 
@@ -139,9 +139,9 @@ while 0 == KEY_ESCAPE.xKeyDown:
     if KEY_S.xKeyDown.bool: camera.xMoveEntity 0,    0,   -1
     if KEY_A.xKeyDown.bool: camera.xMoveEntity -1,   0,    0
     if KEY_D.xKeyDown.bool: camera.xMoveEntity 1,    0,    0
-    mxs = CurveValue(xMouseXSpeed().float * mousespeed, mxs, camerasmoothness.int)
-    mys = CurveValue(xMouseYSpeed().float * mousespeed, mys, camerasmoothness.int)
-    let fix = (mxs.int mod 360).float + (mxs - mxs.int.float)
+    mxs = CurveValue(xMouseXSpeed() * mousespeed, mxs, camerasmoothness.int)
+    mys = CurveValue(xMouseYSpeed() * mousespeed, mys, camerasmoothness.int)
+    let fix = (mxs.int mod 360) + (mxs - mxs.int)
     camxa = camxa - fix
     camya = camya + mys
     if camya < -89: camya = -89
@@ -152,9 +152,9 @@ while 0 == KEY_ESCAPE.xKeyDown:
     # update flame
     if cpuTime() > lastCreated:
         let
-            px = fire.xEntityX(true) + (2.rand - 1).float / 10
+            px = fire.xEntityX(true) + (2.rand - 1) / 10
             py = fire.xEntityY true
-            pz = fire.xEntityZ(true) + (2.rand - 1).float / 10
+            pz = fire.xEntityZ(true) + (2.rand - 1) / 10
         CreateParticle px, py, pz, flame
         lastCreated = cpuTime() + 25 / 1000
     UpdateParticles()

@@ -3,7 +3,7 @@
 # Original source from Xors3D Team (C)
 # Converted in 2019 by Guevara-chan.
 # *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
-import os, random
+import os, random, lenientops
 include "../../Headers/Xors3D.nim"
 "../..".setCurrentDir
 
@@ -53,8 +53,7 @@ for x in 0..wallSize:
         for z in 0..wallSize:
             if x == 0 and y == 0 and z == 0: wallBlocks[x][y][z] = xCreateCube()
             else: wallBlocks[x][y][z] = wallBlocks[0][0][0].xCopyEntity()
-            wallBlocks[x][y][z].xPositionEntity (x - wallSize div 2).float * 2.0, 
-                2.0 + y.float * 2.0, (z - wallSize div 2).float * 2.0
+            wallBlocks[x][y][z].xPositionEntity (x - wallSize div 2) * 2.0, 2.0 + y * 2.0, (z - wallSize div 2) * 2.0
             wallBlocks[x][y][z].xEntityAddBoxShape 1.0
             wallBlocks[x][y][z].xEntityTexture logoTexture
 
@@ -73,8 +72,7 @@ proc resetWall() =
     for x in 0..wallSize:
         for y in 0..wallSize:
             for z in 0..wallSize:
-                wallBlocks[x][y][z].xPositionEntity (x - wallSize div 2).float * 2.0,
-                    2.0 + y.float * 2.0, (z - wallSize div 2).float * 2.0
+                wallBlocks[x][y][z].xPositionEntity (x - wallSize div 2) * 2.0, 2.0 + y * 2.0, (z-wallSize div 2) * 2.0
                 wallBlocks[x][y][z].xRotateEntity 0.0, 0.0, 0.0
                 wallBlocks[x][y][z].xEntityReleaseForces
 
@@ -89,7 +87,7 @@ proc shootSphere(camera: Handle) =
 
 # for camera mouse look
 proc CurveValue(newvalue: float, oldvalue: float, increments: int): float =
-    if increments >  1:     oldvalue - (oldvalue - newvalue) / increments.float
+    if increments >  1:     oldvalue - (oldvalue - newvalue) / increments
     elif increments <= 1:   newvalue
     else: oldvalue
 
@@ -102,9 +100,9 @@ while 0 == KEY_ESCAPE.xKeyDown:
     if KEY_S.xKeyDown.bool: camera.xMoveEntity 0,    0,   -1
     if KEY_A.xKeyDown.bool: camera.xMoveEntity -1,   0,    0
     if KEY_D.xKeyDown.bool: camera.xMoveEntity 1,    0,    0
-    mxs = CurveValue(xMouseXSpeed().float * mousespeed, mxs, camerasmoothness.int)
-    mys = CurveValue(xMouseYSpeed().float * mousespeed, mys, camerasmoothness.int)
-    let fix = (mxs.int mod 360).float + (mxs - mxs.int.float)
+    mxs = CurveValue(xMouseXSpeed() * mousespeed, mxs, camerasmoothness.int)
+    mys = CurveValue(xMouseYSpeed() * mousespeed, mys, camerasmoothness.int)
+    let fix = (mxs.int mod 360) + (mxs - mxs.int)
     camxa = camxa - fix
     camya = camya + mys
     if camya < -89: camya = -89

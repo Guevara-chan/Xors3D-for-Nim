@@ -3,7 +3,7 @@
 # Original source from Xors3D Team (C)
 # Converted in 2019 by Guevara-chan.
 # *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
-import os
+import os, lenientops
 include "../../Headers/Xors3D.nim"
 "../../".setCurrentDir
 
@@ -34,7 +34,7 @@ let light = xCreateLight()
 
 ### Procedures.
 proc CurveValue(newvalue: float, oldvalue: float, increments: int): float =
-    if increments >  1:     oldvalue - (oldvalue - newvalue) / increments.float
+    if increments >  1:     oldvalue - (oldvalue - newvalue) / increments
     elif increments <= 1:   newvalue
     else: oldvalue
 
@@ -47,7 +47,7 @@ proc CubeField(num = 10) =
                 masterCube
             else: masterCube.xCopyEntity
 
-            obj.xPositionEntity (x.float-num.float*0.5+0.5) * 2.5, (y.float-num.float*0.5+0.5) * 2.5, num.float * 4.0
+            obj.xPositionEntity (x - num * 0.5 + 0.5) * 2.5, (y - num * 0.5 + 0.5) * 2.5, num * 4.0
             let
                 r = x * 255 div num
                 g = y * 255 div num
@@ -59,9 +59,9 @@ proc CameraControl() =
     if KEY_S.xKeyDown.bool: camera.xMoveEntity 0,    0,   -1
     if KEY_A.xKeyDown.bool: camera.xMoveEntity -1,   0,    0
     if KEY_D.xKeyDown.bool: camera.xMoveEntity 1,    0,    0
-    mxs = CurveValue(xMouseXSpeed().float * mousespeed, mxs, camerasmoothness.int)
-    mys = CurveValue(xMouseYSpeed().float * mousespeed, mys, camerasmoothness.int)
-    let fix = (mxs.int mod 360).float + (mxs - mxs.int.float)
+    mxs = CurveValue(xMouseXSpeed() * mousespeed, mxs, camerasmoothness.int)
+    mys = CurveValue(xMouseYSpeed() * mousespeed, mys, camerasmoothness.int)
+    let fix = (mxs.int mod 360) + (mxs - mxs.int)
     camxa = camxa - fix
     camya = camya + mys
     if camya < -89: camya = -89
@@ -91,7 +91,7 @@ proc Draw2D() =
     xColor 255, 128, 0, 255
     xRect 20, xGraphicsHeight() - 40, xGraphicsWidth() - 40, 30, true
     xColor 128, 0, 255, 255
-    xText xGraphicsWidth() / 2, (xGraphicsHeight() - 25).float, "We can post process 2d graphics too", true, true
+    xText xGraphicsWidth() / 2, xGraphicsHeight() - 25.0, "We can post process 2d graphics too", true, true
 
 CubeField()
 ### End Procedures.

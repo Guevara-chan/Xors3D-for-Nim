@@ -3,7 +3,7 @@
 # Original source from Xors3D Team (C)
 # Converted in 2019 by Guevara-chan.
 # *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
-import os, random
+import os, random, lenientops
 include "../../Headers/Xors3D.nim"
 "../../".setCurrentDir
 
@@ -17,8 +17,8 @@ let cam1 = xCreateCamera()
 # Set the first camera's viewport so that it fills the top half of the  camera
 let
     w = xGraphicsWidth()
-    h = xGraphicsHeight().float / 1.777
-cam1.xCameraViewport 0, (xGraphicsHeight().float - h).int div 2, w.int, h.int
+    h = xGraphicsHeight() / 1.777
+cam1.xCameraViewport 0, (xGraphicsHeight() - h).int div 2, w.int, h.int
 cam1.xCameraViewport 1025, 769, 1024, 768
 
 let light = xCreateLight()

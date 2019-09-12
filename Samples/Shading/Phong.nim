@@ -3,7 +3,7 @@
 # Original source from MoKa (Maxim Miheyev)
 # Converted in 2019 by Guevara-chan.
 # *-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
-import os, math, times
+import os, math, times, lenientops
 include "../../Headers/Xors3D.nim"
 "../..".setCurrentDir
 #====================================
@@ -83,12 +83,12 @@ proc updateInput() =
     IKdS = KEY_S.xKeyDown; IKdD = KEY_D.xKeyDown
 
 proc updateCamera(camera: Handle, viewSensivity: float, moveSensivity: float) =
-    var camP = gCamera.xEntityPitch + mYSp.float * viewSensivity
-    if camP.abs > 80: camP = (80 * camP.sgn).float
-    camera.xTurnEntity 0, -mXSp.float * viewSensivity, 0
+    var camP = gCamera.xEntityPitch + mYSp * viewSensivity
+    if camP.abs > 80: camP = 80.0 * camP.sgn
+    camera.xTurnEntity 0, -mXSp * viewSensivity, 0
     camera.xRotateEntity camP, gCamera.xEntityYaw, 0
   
-    camera.xMoveEntity (IKdD-IKdA).float*moveSensivity, (IKdE-IKdQ).float*moveSensivity, (IKdW-IKdS).float*moveSensivity
+    camera.xMoveEntity (IKdD-IKdA)*moveSensivity, (IKdE-IKdQ)*moveSensivity, (IKdW-IKdS)*moveSensivity
 
 #====================================
 # Main Cycle
