@@ -2,18 +2,13 @@
 # Xors3D's main engine declarations.
 # Converted in 2020 by Guevara-chan.
 # *=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-{.pragma: X3DDECL, stdcall, discardable, dynlib: "Xors3D.dll".}
 
- 
- 
 # standard headers
- 
 # Delaration & call macros
- 
+{.pragma: X3DDECL, stdcall, discardable, dynlib: "Xors3D.dll".}
 # Object handle typedef
 type Handle* = int
 const NULL = 0
- 
 # Log levels
 const LOG_NO* = 5
 const LOG_FATAL* = 4
@@ -21,21 +16,17 @@ const LOG_ERROR* = 3
 const LOG_WARNING* = 2
 const LOG_MESSAGE* = 1
 const LOG_INFO* = 0
- 
 # Log targets
 const LOG_HTML* = 1
 const LOG_COUT* = 2
 const LOG_STRING* = 4
- 
 # Skinning types
 const SKIN_SOFTWARE* = 2
 const SKIN_HARDWARE* = 1
- 
 # Light sources types
 const LIGHT_DIRECTIONAL* = 1
 const LIGHT_POINT* = 2
 const LIGHT_SPOT* = 3
- 
 # Texture filtering
 const TF_NONE* = 0
 const TF_POINT* = 1
@@ -44,7 +35,6 @@ const TF_ANISOTROPIC* = 3
 const TF_ANISOTROPICX4* = 4
 const TF_ANISOTROPICX8* = 5
 const TF_ANISOTROPICX16* = 6
- 
 # PixelShader versions
 const PS_1_1* = 0
 const PS_1_2* = 1
@@ -52,12 +42,10 @@ const PS_1_3* = 2
 const PS_1_4* = 3
 const PS_2_0* = 4
 const PS_3_0* = 5
- 
 # VertexShader versions
 const VS_1_1* = 0
 const VS_2_0* = 1
 const VS_3_0* = 2
- 
 # Matrix semantics
 const WORLD* = 0
 const WORLDVIEWPROJ* = 1
@@ -82,7 +70,6 @@ const WORLDVIEWPROJINVERSETRANSPOSE* = 27
 const WORLDVIEWTRANSPOSE* = 28
 const WORLDVIEWINVERSE* = 29
 const WORLDVIEWINVERSETRANSPOSE* = 30
- 
 # Antialiasing types
 const AANONE* = 0
 const AA2SAMPLES* = 1
@@ -100,16 +87,13 @@ const AA13SAMPLES* = 12
 const AA14SAMPLES* = 13
 const AA15SAMPLES* = 14
 const AA16SAMPLES* = 15
- 
 # Camera fog mode
 const FOG_NONE* = 0
 const FOG_LINEAR* = 1
- 
 # Camera projection mode
 const PROJ_DISABLE* = 0
 const PROJ_PERSPECTIVE* = 1
 const PROJ_ORTHOGRAPHIC* = 2
- 
 # Entity FX flags
 const FX_NOTHING* = 0
 const FX_FULLBRIGHT* = 1
@@ -118,13 +102,11 @@ const FX_FLATSHADED* = 4
 const FX_DISABLEFOG* = 8
 const FX_DISABLECULLING* = 16
 const FX_NOALPHABLEND* = 32
- 
 # Entity blending modes
 const BLEND_ALPHA* = 1
 const BLEND_MULTIPLY* = 2
 const BLEND_ADD* = 3
 const BLEND_PUREADD* = 4
- 
 # Compare functions
 const CMP_NEVER* = 1
 const CMP_LESS* = 2
@@ -134,12 +116,10 @@ const CMP_GREATER* = 5
 const CMP_NOTEQUAL* = 6
 const CMP_GREATEREQUAL* = 7
 const CMP_ALWAYS* = 8
- 
 # Axis
 const AXIS_X* = 1
 const AXIS_Y* = 2
 const AXIS_Z* = 3
- 
 # Texture loading flags
 const FLAGS_COLOR* = 1
 const FLAGS_ALPHA* = 2
@@ -154,7 +134,6 @@ const FLAGS_SKIPCACHE* = 512
 const FLAGS_VOLUMETEXTURE* = 1024
 const FLAGS_ARBG16F* = 2048
 const FLAGS_ARBG32F* = 4096
- 
 # Texture blending modes
 const TEXBLEND_NONE* = 0
 const TEXBLEND_ALPHA* = 1
@@ -163,7 +142,6 @@ const TEXBLEND_ADD* = 3
 const TEXBLEND_DOT3* = 4
 const TEXBLEND_LIGHTMAP* = 5
 const TEXBLEND_SEPARATEALPHA* = 6
- 
 # Cube map faces
 const FACE_LEFT* = 0
 const FACE_FORWARD* = 1
@@ -171,45 +149,37 @@ const FACE_RIGHT* = 2
 const FACE_BACKWARD* = 3
 const FACE_UP* = 4
 const FACE_DOWN* = 5
- 
 # Entity animation types
 const ANIMATION_STOP* = 0
 const ANIMATION_LOOP* = 1
 const ANIMATION_PINGPONG* = 2
 const ANIMATION_ONE* = 3
- 
 # Collision types
 const SPHERETOSPHERE* = 1
 const SPHERETOBOX* = 3
 const SPHERETOTRIMESH* = 2
- 
 # Collision respones types
 const RESPONSE_STOP* = 1
 const RESPONSE_SLIDING* = 2
 const RESPONSE_SLIDING_DOWNLOCK* = 3
- 
 # Entity picking modes
 const PICK_NONE* = 0
 const PICK_SPHERE* = 1
 const PICK_TRIMESH* = 2
 const PICK_BOX* = 3
- 
 # Sprite view modes
 const SPRITE_FIXED* = 1
 const SPRITE_FREE* = 2
 const SPRITE_FREEROLL* = 3
 const SPRITE_FIXEDYAW* = 4
- 
 # Joystick types
 const JOY_NONE* = 0
 const JOY_DIGITAL* = 1
 const JOY_ANALOG* = 2
- 
 # Cubemap rendering modes
 const CUBEMAP_SPECULAR* = 1
 const CUBEMAP_DIFFUSE* = 2
 const CUBEMAP_REFRACTION* = 3
- 
 # Shadow's blur levels
 const SHADOWS_BLUR_NONE* = 0
 const SHADOWS_BLUR_3* = 1
@@ -217,8 +187,6 @@ const SHADOWS_BLUR_5* = 2
 const SHADOWS_BLUR_7* = 3
 const SHADOWS_BLUR_11* = 4
 const SHADOWS_BLUR_13* = 5
- 
- 
 # primitives types
 const PRIMITIVE_POINTLIST* = 1
 const PRIMITIVE_LINELIST* = 2
@@ -226,19 +194,16 @@ const PRIMITIVE_LINESTRIP* = 3
 const PRIMITIVE_TRIANGLELIST* = 4
 const PRIMITIVE_TRIANGLESTRIP* = 5
 const PRIMITIVE_TRIANGLEFAN* = 6
- 
 # line separator types
 const LS_NUL* = 0
 const LS_CR* = 1
 const LS_LF* = 2
 const LS_CRLF* = 3
- 
 # physics: joint types
 const JOINT_POINT2POINT* = 0
 const JOINT_6DOF* = 1
 const JOINT_6DOFSPRING* = 2
 const JOINT_HINGE* = 3
- 
 # physics: debug drawer modes
 const PXDD_NO* = 0
 const PXDD_WIREFRAME* = 1
@@ -247,11 +212,9 @@ const PXDD_CONTACTS* = 4
 const PXDD_JOINTS* = 8
 const PXDD_JOINT_LIMITS* = 16
 const PXDD_NO_AXIS* = 32
- 
 # physics: ray casting modes
 const PXRC_SINGLE* = 0
 const PXRC_MULTIPLE* = 1
- 
 # 3dlines commands
 proc xCreateLine3D*(fromX: float32, fromY: float32, fromZ: float32, toX: float32, toY: float32, toZ: float32, red: int = 255, green: int = 255, blue: int = 255, alpha: int = 255, useZBuffer: bool = true): Handle {.X3DDECL, importc: "xCreateLine3D".}
 proc xLine3DOrigin*(line3d: Handle, x: float32, y: float32, z: float32, isGlobal: bool = false) {.X3DDECL, importc: "xLine3DOrigin".}
@@ -273,7 +236,6 @@ proc xLine3DAlpha*(line3d: Handle): int {.X3DDECL, importc: "xLine3DAlpha".}
 proc xGetLine3DUseZBuffer*(line3d: Handle): int {.X3DDECL, importc: "xGetLine3DUseZBuffer".}
 proc xDeleteLine3DNode*(line3d: Handle, index: int) {.X3DDECL, importc: "xDeleteLine3DNode".}
 proc xClearLine3D*(line3d: Handle) {.X3DDECL, importc: "xClearLine3D".}
- 
 # brushes commands
 proc xLoadBrush*(path: cstring, flags: int = 9, xScale: float32 = 1.0f, yScale: float32 = 1.0f): Handle {.X3DDECL, importc: "xLoadBrush".}
 proc xCreateBrush*(red: float32 = 255.0f, green: float32 = 255.0f, blue: float32 = 255.0f): Handle {.X3DDECL, importc: "xCreateBrush".}
@@ -294,7 +256,6 @@ proc xGetBrushGreen*(brush: Handle): int {.X3DDECL, importc: "xGetBrushGreen".}
 proc xGetBrushBlue*(brush: Handle): int {.X3DDECL, importc: "xGetBrushBlue".}
 proc xGetBrushFX*(brush: Handle): int {.X3DDECL, importc: "xGetBrushFX".}
 proc xGetBrushShininess*(brush: Handle): float32 {.X3DDECL, importc: "xGetBrushShininess".}
- 
 # cameras commands
 proc xCameraFogMode*(camera: Handle, mode: int) {.X3DDECL, importc: "xCameraFogMode".}
 proc xCameraFogColor*(camera: Handle, red: int, green: int, blue: int) {.X3DDECL, importc: "xCameraFogColor".}
@@ -317,7 +278,6 @@ proc xGetViewMatrix*(camera: Handle): Handle {.X3DDECL, importc: "xGetViewMatrix
 proc xGetProjectionMatrix*(camera: Handle): Handle {.X3DDECL, importc: "xGetProjectionMatrix".}
 proc xCameraZoom*(camera: Handle, zoom: float32) {.X3DDECL, importc: "xCameraZoom".}
 proc xGetViewProjMatrix*(camera: Handle): Handle {.X3DDECL, importc: "xGetViewProjMatrix".}
- 
 # collisions commands
 proc xCollisions*(srcType: int, destType: int, collideMethod: int, response: int) {.X3DDECL, importc: "xCollisions".}
 proc xClearCollisions*() {.X3DDECL, importc: "xClearCollisions".}
@@ -338,12 +298,10 @@ proc xCollisionEntity*(entity: Handle, index: int): Handle {.X3DDECL, importc: "
 proc xCollisionSurface*(entity: Handle, index: int): Handle {.X3DDECL, importc: "xCollisionSurface".}
 proc xCollisionTriangle*(entity: Handle, index: int): int {.X3DDECL, importc: "xCollisionTriangle".}
 proc xGetEntityType*(entity: Handle): int {.X3DDECL, importc: "xGetEntityType".}
- 
 # constants commands
 proc xRenderPostEffect*(poly: Handle) {.X3DDECL, importc: "xRenderPostEffect".}
 proc xCreatePostEffectPoly*(camera: Handle, mode: int): Handle {.X3DDECL, importc: "xCreatePostEffectPoly".}
 proc xGetFunctionAddress*(name: cstring): Handle {.X3DDECL, importc: "xGetFunctionAddress".}
- 
 # effects commands
 proc xLoadFXFile*(path: cstring): Handle {.X3DDECL, importc: "xLoadFXFile".}
 proc xFreeEffect*(effect: Handle) {.X3DDECL, importc: "xFreeEffect".}
@@ -410,7 +368,6 @@ proc xSetFXMatrixSemantic*(effect: Handle, name: cstring, value: int) {.X3DDECL,
 proc xDeleteFXConstant*(effect: Handle, name: cstring) {.X3DDECL, importc: "xDeleteFXConstant".}
 proc xClearFXConstants*(effect: Handle) {.X3DDECL, importc: "xClearFXConstants".}
 proc xSetFXTechnique*(effect: Handle, name: cstring) {.X3DDECL, importc: "xSetFXTechnique".}
- 
 # emitters commands
 proc xCreateEmitter*(psystem: Handle, parent: Handle = NULL): Handle {.X3DDECL, importc: "xCreateEmitter".}
 proc xEmitterEnable*(emitter: Handle, state: bool) {.X3DDECL, importc: "xEmitterEnable".}
@@ -422,7 +379,6 @@ proc xEmitterValidateParticle*(emitter: Handle, particle: Handle): int {.X3DDECL
 proc xEmitterCountParticles*(emitter: Handle): int {.X3DDECL, importc: "xEmitterCountParticles".}
 proc xEmitterGetParticle*(emitter: Handle, index: int): Handle {.X3DDECL, importc: "xEmitterGetParticle".}
 proc xEmitterAlive*(emitter: Handle): int {.X3DDECL, importc: "xEmitterAlive".}
- 
 # entity_animation commands
 proc xExtractAnimSeq*(entity: Handle, firstFrame: int, lastFrame: int, sequence: int = 0): int {.X3DDECL, importc: "xExtractAnimSeq".}
 proc xLoadAnimSeq*(entity: Handle, path: cstring): int {.X3DDECL, importc: "xLoadAnimSeq".}
@@ -435,7 +391,6 @@ proc xAnimSeq*(entity: Handle, rootBone: cstring = ""): int {.X3DDECL, importc: 
 proc xAnimLength*(entity: Handle, rootBone: cstring = ""): float32 {.X3DDECL, importc: "xAnimLength".}
 proc xSetAnimTime*(entity: Handle, time: float32, sequence: int, rootBone: cstring = "") {.X3DDECL, importc: "xSetAnimTime".}
 proc xSetAnimFrame*(entity: Handle, frame: float32, sequence: int, rootBone: cstring = "") {.X3DDECL, importc: "xSetAnimFrame".}
- 
 # entity_control commands
 proc xEntityAutoFade*(entity: Handle, nearRange: float32, farRange: float32) {.X3DDECL, importc: "xEntityAutoFade".}
 proc xEntityOrder*(entity: Handle, order: int) {.X3DDECL, importc: "xEntityOrder".}
@@ -468,7 +423,6 @@ proc xFreezeInstances*(entity: Handle, enable: bool = true) {.X3DDECL, importc: 
 proc xInstancingAvaliable*(): int {.X3DDECL, importc: "xInstancingAvaliable".}
 proc xGetEntityWorld*(entity: Handle): Handle {.X3DDECL, importc: "xGetEntityWorld".}
 proc xSetEntityWorld*(entity: Handle, world: Handle) {.X3DDECL, importc: "xSetEntityWorld".}
- 
 # entity_movement commands
 proc xScaleEntity*(entity: Handle, x: float32, y: float32, z: float32, isGlobal: bool = false) {.X3DDECL, importc: "xScaleEntity".}
 proc xPositionEntity*(entity: Handle, x: float32, y: float32, z: float32, isGlobal: bool = false) {.X3DDECL, importc: "xPositionEntity".}
@@ -478,7 +432,6 @@ proc xRotateEntity*(entity: Handle, x: float32, y: float32, z: float32, isGlobal
 proc xTurnEntity*(entity: Handle, x: float32, y: float32, z: float32, isGlobal: bool = false) {.X3DDECL, importc: "xTurnEntity".}
 proc xPointEntity*(entity1: Handle, entity2: Handle, roll: float32 = 0.0f) {.X3DDECL, importc: "xPointEntity".}
 proc xAlignToVector*(entity: Handle, x: float32, y: float32, z: float32, axis: int, factor: float32 = 1.0f) {.X3DDECL, importc: "xAlignToVector".}
- 
 # entity_state commands
 proc xEntityDistance*(entity1: Handle, entity2: Handle): float32 {.X3DDECL, importc: "xEntityDistance".}
 proc xGetMatElement*(entity: Handle, row: int, col: int): float32 {.X3DDECL, importc: "xGetMatElement".}
@@ -511,7 +464,6 @@ proc xGetEntityBlend*(entity: Handle): int {.X3DDECL, importc: "xGetEntityBlend"
 proc xGetEntityFX*(entity: Handle): int {.X3DDECL, importc: "xGetEntityFX".}
 proc xEntityHidden*(entity: Handle): int {.X3DDECL, importc: "xEntityHidden".}
 proc xEntitiesBBIntersect*(entity1: Handle, entity2: Handle): int {.X3DDECL, importc: "xEntitiesBBIntersect".}
- 
 # filesystems commands
 proc xMountPackFile*(path: cstring, mountpoint: cstring = "", password: cstring = ""): Handle {.X3DDECL, importc: "xMountPackFile".}
 proc xUnmountPackFile*(packfile: Handle) {.X3DDECL, importc: "xUnmountPackFile".}
@@ -549,7 +501,6 @@ proc xWriteInt*(file: Handle, value: int) {.X3DDECL, importc: "xWriteInt".}
 proc xWriteFloat*(file: Handle, value: float32) {.X3DDECL, importc: "xWriteFloat".}
 proc xWriteString*(file: Handle, value: cstring) {.X3DDECL, importc: "xWriteString".}
 proc xWriteLine*(file: Handle, value: cstring, ls_flag: int = 0) {.X3DDECL, importc: "xWriteLine".}
- 
 # fonts commands
 proc xLoadFont*(name: cstring, height: int, bold: bool = false, italic: bool = false, underline: bool = false, fontface: cstring = ""): Handle {.X3DDECL, importc: "xLoadFont".}
 proc xText*(x: float32, y: float32, textString: cstring, centerx: bool = false, centery: bool = false) {.X3DDECL, importc: "xText".}
@@ -559,7 +510,6 @@ proc xFontWidth*(): int {.X3DDECL, importc: "xFontWidth".}
 proc xFontHeight*(): int {.X3DDECL, importc: "xFontHeight".}
 proc xStringWidth*(textString: cstring): int {.X3DDECL, importc: "xStringWidth".}
 proc xStringHeight*(textString: cstring): int {.X3DDECL, importc: "xStringHeight".}
- 
 # graphics commands
 proc xWinMessage*(message: cstring): int {.X3DDECL, importc: "xWinMessage".}
 proc xGetMaxPixelShaderVersion*(): int {.X3DDECL, importc: "xGetMaxPixelShaderVersion".}
@@ -672,7 +622,6 @@ proc xDeltaValue*(value: float32, time: int = 0): float32 {.X3DDECL, importc: "x
 proc xAddDeviceLostCallback*(f: int) {.X3DDECL, importc: "xAddDeviceLostCallback".}
 proc xDeleteDeviceLostCallback*(f: int) {.X3DDECL, importc: "xDeleteDeviceLostCallback".}
 proc xDeinit*() {.X3DDECL, importc: "xDeinit".}
- 
 # images commands
 proc xImageColor*(image: Handle, red: int, green: int, blue: int) {.X3DDECL, importc: "xImageColor".}
 proc xImageAlpha*(image: Handle, alpha: float32) {.X3DDECL, importc: "xImageAlpha".}
@@ -707,7 +656,6 @@ proc xDrawBlock*(image: Handle, x: float32, y: float32, frame: int = 0) {.X3DDEC
 proc xDrawBlockRect*(image: Handle, x: float32, y: float32, rectx: float32, recty: float32, rectWidth: float32, rectHeight: float32, frame: int = 0) {.X3DDECL, importc: "xDrawBlockRect".}
 proc xImageActualWidth*(image: Handle): int {.X3DDECL, importc: "xImageActualWidth".}
 proc xImageActualHeight*(image: Handle): int {.X3DDECL, importc: "xImageActualHeight".}
- 
 # inputs commands
 proc xFlushKeys*() {.X3DDECL, importc: "xFlushKeys".}
 proc xFlushMouse*() {.X3DDECL, importc: "xFlushMouse".}
@@ -728,7 +676,6 @@ proc xMouseYSpeed*(): int {.X3DDECL, importc: "xMouseYSpeed".}
 proc xMouseZSpeed*(): int {.X3DDECL, importc: "xMouseZSpeed".}
 proc xMouseSpeed*(): int {.X3DDECL, importc: "xMouseSpeed".}
 proc xMoveMouse*(x: int, y: int) {.X3DDECL, importc: "xMoveMouse".}
- 
 # joysticks commands
 proc xJoyType*(portID: int = 0): int {.X3DDECL, importc: "xJoyType".}
 proc xJoyDown*(key: int, portID: int = 0): int {.X3DDECL, importc: "xJoyDown".}
@@ -751,7 +698,6 @@ proc xJoyZDir*(portID: int = 0): int {.X3DDECL, importc: "xJoyZDir".}
 proc xJoyUDir*(portID: int = 0): int {.X3DDECL, importc: "xJoyUDir".}
 proc xJoyVDir*(portID: int = 0): int {.X3DDECL, importc: "xJoyVDir".}
 proc xCountJoys*(): int {.X3DDECL, importc: "xCountJoys".}
- 
 # lights commands
 proc xCreateLight*(typeID: int = 1): Handle {.X3DDECL, importc: "xCreateLight".}
 proc xLightShadowEpsilons*(light: Handle, epsilon1: float32, epsilon2: float32) {.X3DDECL, importc: "xLightShadowEpsilons".}
@@ -760,7 +706,6 @@ proc xLightShadowsEnabled*(light: Handle): int {.X3DDECL, importc: "xLightShadow
 proc xLightRange*(light: Handle, range: float32) {.X3DDECL, importc: "xLightRange".}
 proc xLightColor*(light: Handle, red: int, green: int, blue: int) {.X3DDECL, importc: "xLightColor".}
 proc xLightConeAngles*(light: Handle, inner: float32, outer: float32) {.X3DDECL, importc: "xLightConeAngles".}
- 
 # logging commands
 proc xCreateLog*(target: int = 1, level: int = 0, filename: cstring = "xors_log.html", cssfilename: cstring = ""): int {.X3DDECL, importc: "xCreateLog".}
 proc xCloseLog*(): int {.X3DDECL, importc: "xCloseLog".}
@@ -775,7 +720,6 @@ proc xLogMessage*(message: cstring, f: cstring = "", file: cstring = "", line: i
 proc xLogWarning*(message: cstring, f: cstring = "", file: cstring = "", line: int = -1) {.X3DDECL, importc: "xLogWarning".}
 proc xLogError*(message: cstring, f: cstring = "", file: cstring = "", line: int = -1) {.X3DDECL, importc: "xLogError".}
 proc xLogFatal*(message: cstring, f: cstring = "", file: cstring = "", line: int = -1) {.X3DDECL, importc: "xLogFatal".}
- 
 # meshes commands
 proc xCreateMesh*(parent: Handle = NULL): Handle {.X3DDECL, importc: "xCreateMesh".}
 proc xLoadMesh*(path: cstring, parent: Handle = NULL): Handle {.X3DDECL, importc: "xLoadMesh".}
@@ -817,7 +761,6 @@ proc xMeshSingleSurface*(entity: Handle) {.X3DDECL, importc: "xMeshSingleSurface
 proc xSaveMesh*(entity: Handle, path: cstring): int {.X3DDECL, importc: "xSaveMesh".}
 proc xLightMesh*(entity: Handle, red: int, green: int, blue: int, range: float32 = 0.0f, lightX: float32 = 0.0f, lightY: float32 = 0.0f, lightZ: float32 = 0.0f) {.X3DDECL, importc: "xLightMesh".}
 proc xMeshPrimitiveType*(entity: Handle, ptype: int) {.X3DDECL, importc: "xMeshPrimitiveType".}
- 
 # particles commands
 proc xParticlePosition*(particle: Handle, x: float32, y: float32, z: float32) {.X3DDECL, importc: "xParticlePosition".}
 proc xParticleX*(particle: Handle): float32 {.X3DDECL, importc: "xParticleX".}
@@ -847,7 +790,6 @@ proc xParticleSY*(particle: Handle): float32 {.X3DDECL, importc: "xParticleSY".}
 proc xParticleScaleSpeed*(particle: Handle, x: float32, y: float32) {.X3DDECL, importc: "xParticleScaleSpeed".}
 proc xParticleScaleSpeedX*(particle: Handle): float32 {.X3DDECL, importc: "xParticleScaleSpeedX".}
 proc xParticleScaleSpeedY*(particle: Handle): float32 {.X3DDECL, importc: "xParticleScaleSpeedY".}
- 
 # physics commands
 proc xEntityAddDummyShape*(entity: Handle) {.X3DDECL, importc: "xEntityAddDummyShape".}
 proc xEntityAddBoxShape*(entity: Handle, mass: float32, width: float32 = 0.0f, height: float32 = 0.0f, depth: float32 = 0.0f) {.X3DDECL, importc: "xEntityAddBoxShape".}
@@ -1044,7 +986,6 @@ proc xEntityWheelGetPitch*(chassisEntity: Handle, index: int): float32 {.X3DDECL
 proc xEntityWheelGetYaw*(chassisEntity: Handle, index: int): float32 {.X3DDECL, importc: "xEntityWheelGetYaw".}
 proc xEntityWheelGetRoll*(chassisEntity: Handle, index: int): float32 {.X3DDECL, importc: "xEntityWheelGetRoll".}
 proc xEntityWheelGetContactEntity*(chassisEntity: Handle, index: int): Handle {.X3DDECL, importc: "xEntityWheelGetContactEntity".}
- 
 # posteffects commands
 proc xLoadPostEffect*(path: cstring): Handle {.X3DDECL, importc: "xLoadPostEffect".}
 proc xFreePostEffect*(postEffect: Handle) {.X3DDECL, importc: "xFreePostEffect".}
@@ -1057,7 +998,6 @@ proc xSetPostEffectVector*(postEffect: Handle, name: cstring, x: float32, y: flo
 proc xSetPostEffectTexture*(postEffect: Handle, name: cstring, texture: Handle, frame: int = 0) {.X3DDECL, importc: "xSetPostEffectTexture".}
 proc xDeletePostEffectConstant*(postEffect: Handle, name: cstring) {.X3DDECL, importc: "xDeletePostEffectConstant".}
 proc xClearPostEffectConstants*(postEffect: Handle) {.X3DDECL, importc: "xClearPostEffectConstants".}
- 
 # psystems commands
 proc xCreatePSystem*(pointSprites: bool = false): Handle {.X3DDECL, importc: "xCreatePSystem".}
 proc xPSystemType*(psystem: Handle): int {.X3DDECL, importc: "xPSystemType".}
@@ -1135,7 +1075,6 @@ proc xPSystemGetEndColorBlue*(psystem: Handle): float32 {.X3DDECL, importc: "xPS
 proc xFreePSystem*(psystem: Handle) {.X3DDECL, importc: "xFreePSystem".}
 proc xPSystemSetParticleParenting*(psystem: Handle, mode: bool) {.X3DDECL, importc: "xPSystemSetParticleParenting".}
 proc xPSystemGetParticleParenting*(psystem: Handle): int {.X3DDECL, importc: "xPSystemGetParticleParenting".}
- 
 # raypicks commands
 proc xLinePick*(x: float32, y: float32, z: float32, dx: float32, dy: float32, dz: float32, distance: float32 = 0.0f): Handle {.X3DDECL, importc: "xLinePick".}
 proc xEntityPick*(entity: Handle, range: float32 = 0.0f): Handle {.X3DDECL, importc: "xEntityPick".}
@@ -1150,7 +1089,6 @@ proc xPickedEntity*(): Handle {.X3DDECL, importc: "xPickedEntity".}
 proc xPickedSurface*(): Handle {.X3DDECL, importc: "xPickedSurface".}
 proc xPickedTriangle*(): int {.X3DDECL, importc: "xPickedTriangle".}
 proc xPickedTime*(): int {.X3DDECL, importc: "xPickedTime".}
- 
 # shadows commands
 proc xSetShadowsBlur*(blurLevel: int) {.X3DDECL, importc: "xSetShadowsBlur".}
 proc xSetShadowShader*(path: cstring) {.X3DDECL, importc: "xSetShadowShader".}
@@ -1164,7 +1102,6 @@ proc xEntityCastShadows*(entity: Handle, light: Handle, state: bool) {.X3DDECL, 
 proc xEntityReceiveShadows*(entity: Handle, light: Handle, state: bool) {.X3DDECL, importc: "xEntityReceiveShadows".}
 proc xEntityIsCaster*(entity: Handle, light: Handle): int {.X3DDECL, importc: "xEntityIsCaster".}
 proc xEntityIsReceiver*(entity: Handle, light: Handle): int {.X3DDECL, importc: "xEntityIsReceiver".}
- 
 # sounds commands
 proc xLoadSound*(path: cstring): Handle {.X3DDECL, importc: "xLoadSound".}
 proc xLoad3DSound*(path: cstring): Handle {.X3DDECL, importc: "xLoad3DSound".}
@@ -1186,7 +1123,6 @@ proc xEmitSound*(sound: Handle, entity: Handle): int {.X3DDECL, importc: "xEmitS
 proc xCreateListener*(parent: Handle = NULL, roFactor: float32 = 1.0f, doplerFactor: float32 = 1.0f, distFactor: float32 = 1.0f): Handle {.X3DDECL, importc: "xCreateListener".}
 proc xGetListener*(): Handle {.X3DDECL, importc: "xGetListener".}
 proc xInitalizeSound*(): int {.X3DDECL, importc: "xInitalizeSound".}
- 
 # sprites commands
 proc xCreateSprite*(parent: Handle = NULL): Handle {.X3DDECL, importc: "xCreateSprite".}
 proc xSpriteViewMode*(sprite: Handle, mode: int) {.X3DDECL, importc: "xSpriteViewMode".}
@@ -1194,7 +1130,6 @@ proc xHandleSprite*(sprite: Handle, x: float32, y: float32) {.X3DDECL, importc: 
 proc xLoadSprite*(path: cstring, flags: int = 9, parent: Handle = NULL): Handle {.X3DDECL, importc: "xLoadSprite".}
 proc xRotateSprite*(sprite: Handle, angle: float32) {.X3DDECL, importc: "xRotateSprite".}
 proc xScaleSprite*(sprite: Handle, xScale: float32, yScale: float32) {.X3DDECL, importc: "xScaleSprite".}
- 
 # surfaces commands
 proc xCreateSurface*(entity: Handle, brush: Handle = NULL, dynamic: bool = false): Handle {.X3DDECL, importc: "xCreateSurface".}
 proc xGetSurfaceBrush*(surface: Handle): Handle {.X3DDECL, importc: "xGetSurfaceBrush".}
@@ -1242,7 +1177,6 @@ proc xSurfaceBlend*(surface: Handle, blendMode: int) {.X3DDECL, importc: "xSurfa
 proc xSurfaceFX*(surface: Handle, fxFlags: int) {.X3DDECL, importc: "xSurfaceFX".}
 proc xSurfaceAlphaRef*(surface: Handle, alphaRef: int) {.X3DDECL, importc: "xSurfaceAlphaRef".}
 proc xSurfaceAlphaFunc*(surface: Handle, alphaFunc: int) {.X3DDECL, importc: "xSurfaceAlphaFunc".}
- 
 # sysinfos commands
 proc xCPUName*(): cstring {.X3DDECL, importc: "xCPUName".}
 proc xCPUVendor*(): cstring {.X3DDECL, importc: "xCPUVendor".}
@@ -1267,7 +1201,6 @@ proc xGetXors3dVersion*(): cstring {.X3DDECL, importc: "xGetXors3dVersion".}
 proc xGetXors3dMajorVersion*(): int {.X3DDECL, importc: "xGetXors3dMajorVersion".}
 proc xGetXors3dMinorVersion*(): int {.X3DDECL, importc: "xGetXors3dMinorVersion".}
 proc xGetXors3dRevision*(): int {.X3DDECL, importc: "xGetXors3dRevision".}
- 
 # terrains commands
 proc xLoadTerrain*(path: cstring, parent: Handle = NULL): Handle {.X3DDECL, importc: "xLoadTerrain".}
 proc xCreateTerrain*(size: int, parent: Handle = NULL): Handle {.X3DDECL, importc: "xCreateTerrain".}
@@ -1286,7 +1219,6 @@ proc xTerrainTextureLightmap*(texture: Handle, state: bool) {.X3DDECL, importc: 
 proc xTerrainTexture*(terrain: Handle, texture: Handle) {.X3DDECL, importc: "xTerrainTexture".}
 proc xTerrainViewZone*(terrain: Handle, viewZone: int, texturingZone: int = -1) {.X3DDECL, importc: "xTerrainViewZone".}
 proc xTerrainLODs*(lodsCount: int) {.X3DDECL, importc: "xTerrainLODs".}
- 
 # textures commands
 proc xTextureWidth*(texture: Handle): int {.X3DDECL, importc: "xTextureWidth".}
 proc xTextureHeight*(texture: Handle): int {.X3DDECL, importc: "xTextureHeight".}
@@ -1322,7 +1254,6 @@ proc xGetCubeMode*(texture: Handle): int {.X3DDECL, importc: "xGetCubeMode".}
 proc xGetTextureFlags*(texture: Handle): int {.X3DDECL, importc: "xGetTextureFlags".}
 proc xSetTextureFlags*(texture: Handle, flags: int) {.X3DDECL, importc: "xSetTextureFlags".}
 proc xTextureCounter*(texture: Handle): int {.X3DDECL, importc: "xTextureCounter".}
- 
 # transforms commands
 proc xVectorPitch*(x: float32, y: float32, z: float32): float32 {.X3DDECL, importc: "xVectorPitch".}
 proc xVectorYaw*(x: float32, y: float32, z: float32): float32 {.X3DDECL, importc: "xVectorYaw".}
@@ -1334,7 +1265,6 @@ proc xTFormedZ*(): float32 {.X3DDECL, importc: "xTFormedZ".}
 proc xTFormPoint*(x: float32, y: float32, z: float32, source: Handle, destination: Handle) {.X3DDECL, importc: "xTFormPoint".}
 proc xTFormVector*(x: float32, y: float32, z: float32, source: Handle, destination: Handle) {.X3DDECL, importc: "xTFormVector".}
 proc xTFormNormal*(x: float32, y: float32, z: float32, source: Handle, destination: Handle) {.X3DDECL, importc: "xTFormNormal".}
- 
 # videos commands
 proc xOpenMovie*(path: cstring): Handle {.X3DDECL, importc: "xOpenMovie".}
 proc xCloseMovie*(video: Handle) {.X3DDECL, importc: "xCloseMovie".}
@@ -1348,14 +1278,12 @@ proc xMovieCurrentTime*(video: Handle): float32 {.X3DDECL, importc: "xMovieCurre
 proc xMoviePause*(video: Handle) {.X3DDECL, importc: "xMoviePause".}
 proc xMovieResume*(video: Handle) {.X3DDECL, importc: "xMovieResume".}
 proc xMovieTexture*(video: Handle): Handle {.X3DDECL, importc: "xMovieTexture".}
- 
 # worlds commands
 proc xCreateWorld*(): Handle {.X3DDECL, importc: "xCreateWorld".}
 proc xSetActiveWorld*(world: Handle) {.X3DDECL, importc: "xSetActiveWorld".}
 proc xGetActiveWorld*(): Handle {.X3DDECL, importc: "xGetActiveWorld".}
 proc xGetDefaultWorld*(): Handle {.X3DDECL, importc: "xGetDefaultWorld".}
 proc xDeleteWorld*(world: Handle) {.X3DDECL, importc: "xDeleteWorld".}
- 
 # Scancodes for keyboard and mouse
 const MOUSE_LEFT* = 1
 const MOUSE_RIGHT* = 2
@@ -1365,8 +1293,6 @@ const MOUSE5* = 5
 const MOUSE6* = 6
 const MOUSE7* = 7
 const MOUSE8* = 8
- 
- 
 const KEY_ESCAPE* = 1
 const KEY_1* = 2
 const KEY_2* = 3
@@ -1485,5 +1411,3 @@ const KEY_LEFTARROW* = KEY_LEFT
 const KEY_RIGHTARROW* = KEY_RIGHT
 const KEY_DOWNARROW* = KEY_DOWN
 const KEY_PGDN* = KEY_NEXT
- 
- 
